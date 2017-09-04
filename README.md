@@ -8,7 +8,6 @@ Presenting a <a href= "https://pugjs.org/api/getting-started.html"> PUG</a> base
 
 Prerequisites  - 
   1. <a href= "https://pugjs.org/api/getting-started.html"> PUG </a>
-    CDN : 
   2. <a href="http://getbootstrap.com/"> Bootstrap </a>
   3. <a href="https://jquery.com/"> Jquery </a>
   4. <a href="https://material.io/"> Material Design </a>
