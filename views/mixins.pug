@@ -1,0 +1,49 @@
+mixin chartDraw(bg_color , idCard, title , highlight , desc , icon_footer , text_footer)
+	.card
+		.card-header.card-chart(data-background-color=bg_color)
+			.ct-chart(id=idCard)
+		.card-content
+			h4.title=title
+			p.category
+				span.text-success=highlight
+				| #{desc}
+		.card-footer
+			.stats
+				i.material-icons=icon_footer
+				|  #{text_footer}
+mixin metricCard(bgcolor_header , icon_header , title_main , text_main , text_small_main , icon_footer , href_link_footer , href_text_footer )
+	.card.card-stats
+		.card-header(data-background-color=bgcolor_header)
+			i.material-icons=icon_header
+		.card-content
+			p.category=title_main
+			h3.title
+				| #{text_main}
+				if text_small_main
+					small=text_small_main
+		.card-footer
+			.stats
+				i.material-icons=icon_footer
+				a(href=href_link_footer)=href_text_footer
+mixin sideBar(bg_img, bg_color, logo_href , logo_alt, links)
+	.sidebar(data-color='purple', data-image='/img/sidebar-1.jpg')
+		//
+			Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+			Tip 2: you can also add an image using data-image tag
+		.logo
+			a.simple-text(href=logo_href)
+				| #{logo_alt}
+		if links
+			.sidebar-wrapper
+				ul.nav
+					for link in links
+						if link.active
+							li.active
+								a(href=link.href)
+									i.material-icons=link.icon
+									p=link.title
+						else
+							li
+								a(href=link.href )
+									i.material-icons=link.icon
+									p=link.title

@@ -1,0 +1,526 @@
+extends layout
+
+block content
+  include mixins
+  .wrapper
+    .sidebar(data-color='purple', data-image='/img/sidebar-1.jpg')
+      //
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+        Tip 2: you can also add an image using data-image tag
+      .logo
+        a.simple-text(href='http://www.creative-tim.com')
+          | Creative Tim
+      .sidebar-wrapper
+        ul.nav
+          li.active
+            a(href='/dashboard')
+              i.material-icons dashboard
+              p Dashboard
+          li
+            a(href='/charts')
+              i.material-icons perm_media
+              p Charts
+          li
+            a(href='/table')
+              i.material-icons content_paste
+              p Tables
+          li
+            a(href='/table')
+              i.material-icons content_paste
+              p Tables
+          li
+            a(href='/typography')
+              i.material-icons library_books
+              p Typography
+          li
+            a(href='/icons')
+              i.material-icons bubble_chart
+              p Icons
+          li
+            a(href='/maps')
+              i.material-icons location_on
+              p Maps
+          li
+            a(href='/notifications')
+              i.material-icons.text-gray notifications
+              p Notifications
+          li.active-pro
+            a(href='upgrade.html')
+              i.material-icons unarchive
+              p Upgrade to PRO
+      .sidebar-background(style='background-image: url(../assets/img/sidebar-1.jpg) ')
+    .main-panel
+      nav.navbar.navbar-transparent.navbar-absolute
+        .container-fluid
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='#') Material Dashboard
+          .collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+              li
+                a.dropdown-toggle(href='#pablo', data-toggle='dropdown')
+                  i.material-icons dashboard
+                  p.hidden-lg.hidden-md Dashboard
+              li.dropdown
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                  i.material-icons notifications
+                  span.notification 5
+                  p.hidden-lg.hidden-md Notifications
+                ul.dropdown-menu
+                  li
+                    a(href='#') Mike John responded to your email
+                  li
+                    a(href='#') You have 5 new tasks
+                  li
+                    a(href='#') You're now friend with Andrew
+                  li
+                    a(href='#') Another Notification
+                  li
+                    a(href='#') Another One
+              li
+                a.dropdown-toggle(href='#pablo', data-toggle='dropdown')
+                  i.material-icons person
+                  p.hidden-lg.hidden-md Profile
+            form.navbar-form.navbar-right(role='search')
+              .form-group.is-empty
+                input.form-control(type='text', placeholder='Search')
+                span.material-input
+                span.material-input
+              button.btn.btn-white.btn-round.btn-just-icon(type='submit')
+                i.material-icons search
+                .ripple-container
+      .content
+        .container-fluid
+          .row
+            .col-lg-3.col-md-6.col-sm-6
+              +metricCard()
+            .col-lg-3.col-md-6.col-sm-6
+              .card.card-stats
+                .card-header(data-background-color='green')
+                  i.material-icons store
+                .card-content
+                  p.category Revenue
+                  h3.title $34,245
+                .card-footer
+                  .stats
+                    i.material-icons date_range
+                    |  Last 24 Hours
+            .col-lg-3.col-md-6.col-sm-6
+              .card.card-stats
+                .card-header(data-background-color='red')
+                  i.material-icons info_outline
+                .card-content
+                  p.category Fixed Issues
+                  h3.title 75
+                .card-footer
+                  .stats
+                    i.material-icons local_offer
+                    |  Tracked from Github
+            .col-lg-3.col-md-6.col-sm-6
+              .card.card-stats
+                .card-header(data-background-color='blue')
+                  i.fa.fa-twitter
+                .card-content
+                  p.category Followers
+                  h3.title +245
+                .card-footer
+                  .stats
+                    i.material-icons update
+                    |  Just Updated
+          .row
+            .col-md-4
+              .card
+                .card-header.card-chart(data-background-color='green')
+                  #dailySalesChart.ct-chart
+                    svg.ct-chart-line(xmlns:ct='http://gionkunz.github.com/chartist-js/ct', width='100%', height='100%', style='width: 100%; height: 100%;')
+                      g.ct-grids
+                        line.ct-grid.ct-horizontal(x1='40', x2='40', y1='0', y2='120')
+                        line.ct-grid.ct-horizontal(x1='76.14285714285714', x2='76.14285714285714', y1='0', y2='120')
+                        line.ct-grid.ct-horizontal(x1='112.28571428571429', x2='112.28571428571429', y1='0', y2='120')
+                        line.ct-grid.ct-horizontal(x1='148.42857142857144', x2='148.42857142857144', y1='0', y2='120')
+                        line.ct-grid.ct-horizontal(x1='184.57142857142858', x2='184.57142857142858', y1='0', y2='120')
+                        line.ct-grid.ct-horizontal(x1='220.71428571428572', x2='220.71428571428572', y1='0', y2='120')
+                        line.ct-grid.ct-horizontal(x1='256.8571428571429', x2='256.8571428571429', y1='0', y2='120')
+                        line.ct-grid.ct-vertical(y1='120', y2='120', x1='40', x2='293')
+                        line.ct-grid.ct-vertical(y1='96', y2='96', x1='40', x2='293')
+                        line.ct-grid.ct-vertical(y1='72', y2='72', x1='40', x2='293')
+                        line.ct-grid.ct-vertical(y1='48', y2='48', x1='40', x2='293')
+                        line.ct-grid.ct-vertical(y1='24', y2='24', x1='40', x2='293')
+                        line.ct-grid.ct-vertical(y1='0', y2='0', x1='40', x2='293')
+                      g
+                        g.ct-series.ct-series-a
+                          path.ct-line(d='M 40 91.2 C 76.143 79.2 76.143 79.2 76.143 79.2 C 112.286 103.2 112.286 103.2 112.286 103.2 C 148.429 79.2 148.429 79.2 148.429 79.2 C 184.571 64.8 184.571 64.8 184.571 64.8 C 220.714 76.8 220.714 76.8 220.714 76.8 C 256.857 28.8 256.857 28.8 256.857 28.8')
+                          line.ct-point(x1='40', y1='91.2', x2='40.01', y2='91.2', value='12', opacity='1')
+                          line.ct-point(x1='76.14285714285714', y1='79.2', x2='76.15285714285714', y2='79.2', value='17', opacity='1')
+                          line.ct-point(x1='112.28571428571429', y1='103.2', x2='112.2957142857143', y2='103.2', value='7', opacity='1')
+                          line.ct-point(x1='148.42857142857144', y1='79.2', x2='148.43857142857144', y2='79.2', value='17', opacity='1')
+                          line.ct-point(x1='184.57142857142858', y1='64.8', x2='184.58142857142857', y2='64.8', value='23', opacity='1')
+                          line.ct-point(x1='220.71428571428572', y1='76.8', x2='220.7242857142857', y2='76.8', value='18', opacity='1')
+                          line.ct-point(x1='256.8571428571429', y1='28.799999999999997', x2='256.8671428571429', y2='28.799999999999997', value='38', opacity='1')
+                      g.ct-labels
+                        foreignobject(style='overflow: visible;', x='40', y='125', width='36.142857142857146', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 36px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') M
+                        foreignobject(style='overflow: visible;', x='76.14285714285714', y='125', width='36.142857142857146', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 36px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') T
+                        foreignobject(style='overflow: visible;', x='112.28571428571429', y='125', width='36.14285714285715', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 36px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') W
+                        foreignobject(style='overflow: visible;', x='148.42857142857144', y='125', width='36.14285714285714', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 36px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') T
+                        foreignobject(style='overflow: visible;', x='184.57142857142858', y='125', width='36.14285714285714', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 36px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') F
+                        foreignobject(style='overflow: visible;', x='220.71428571428572', y='125', width='36.14285714285717', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 36px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') S
+                        foreignobject(style='overflow: visible;', x='256.8571428571429', y='125', width='36.14285714285711', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 36px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') S
+                        foreignobject(style='overflow: visible;', y='96', x='0', height='24', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 24px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 0
+                        foreignobject(style='overflow: visible;', y='72', x='0', height='24', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 24px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 10
+                        foreignobject(style='overflow: visible;', y='48', x='0', height='24', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 24px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 20
+                        foreignobject(style='overflow: visible;', y='24', x='0', height='24', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 24px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 30
+                        foreignobject(style='overflow: visible;', y='0', x='0', height='24', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 24px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 40
+                        foreignobject(style='overflow: visible;', y='-30', x='0', height='30', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 30px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 50
+                .card-content
+                  h4.title Daily Sales
+                  p.category
+                    span.text-success
+                      i.fa.fa-long-arrow-up
+                      |  55%
+                    |  increase in today sales.
+                .card-footer
+                  .stats
+                    i.material-icons access_time
+                    |  updated 4 minutes ago
+            .col-md-4
+              .card
+                .card-header.card-chart(data-background-color='orange')
+                  #emailsSubscriptionChart.ct-chart
+                    svg.ct-chart-bar(xmlns:ct='http://gionkunz.github.com/chartist-js/ct', width='100%', height='100%', style='width: 100%; height: 100%;')
+                      g.ct-grids
+                        line.ct-grid.ct-vertical(y1='120', y2='120', x1='40', x2='288')
+                        line.ct-grid.ct-vertical(y1='96', y2='96', x1='40', x2='288')
+                        line.ct-grid.ct-vertical(y1='72', y2='72', x1='40', x2='288')
+                        line.ct-grid.ct-vertical(y1='48', y2='48', x1='40', x2='288')
+                        line.ct-grid.ct-vertical(y1='24', y2='24', x1='40', x2='288')
+                        line.ct-grid.ct-vertical(y1='0', y2='0', x1='40', x2='288')
+                      g
+                        g.ct-series.ct-series-a
+                          line.ct-bar(x1='50.333333333333336', x2='50.333333333333336', y1='120', y2='54.959999999999994', value='542', opacity='1')
+                          line.ct-bar(x1='71', x2='71', y1='120', y2='66.84', value='443', opacity='1')
+                          line.ct-bar(x1='91.66666666666667', x2='91.66666666666667', y1='120', y2='81.6', value='320', opacity='1')
+                          line.ct-bar(x1='112.33333333333333', x2='112.33333333333333', y1='120', y2='26.400000000000006', value='780', opacity='1')
+                          line.ct-bar(x1='133', x2='133', y1='120', y2='53.64', value='553', opacity='1')
+                          line.ct-bar(x1='153.66666666666669', x2='153.66666666666669', y1='120', y2='65.64', value='453', opacity='1')
+                          line.ct-bar(x1='174.33333333333334', x2='174.33333333333334', y1='120', y2='80.88', value='326', opacity='1')
+                          line.ct-bar(x1='195.00000000000003', x2='195.00000000000003', y1='120', y2='67.92', value='434', opacity='1')
+                          line.ct-bar(x1='215.66666666666669', x2='215.66666666666669', y1='120', y2='51.84', value='568', opacity='1')
+                          line.ct-bar(x1='236.33333333333334', x2='236.33333333333334', y1='120', y2='46.8', value='610', opacity='1')
+                          line.ct-bar(x1='257', x2='257', y1='120', y2='29.28', value='756', opacity='1')
+                          line.ct-bar(x1='277.6666666666667', x2='277.6666666666667', y1='120', y2='12.599999999999994', value='895', opacity='1')
+                      g.ct-labels
+                        foreignobject(style='overflow: visible;', x='40', y='125', width='20.666666666666668', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 21px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') Jan
+                        foreignobject(style='overflow: visible;', x='60.66666666666667', y='125', width='20.666666666666668', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 21px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') Feb
+                        foreignobject(style='overflow: visible;', x='81.33333333333334', y='125', width='20.666666666666664', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 21px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') Mar
+                        foreignobject(style='overflow: visible;', x='102', y='125', width='20.66666666666667', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 21px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') Apr
+                        foreignobject(style='overflow: visible;', x='122.66666666666667', y='125', width='20.66666666666667', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 21px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') Mai
+                        foreignobject(style='overflow: visible;', x='143.33333333333334', y='125', width='20.666666666666657', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 21px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') Jun
+                        foreignobject(style='overflow: visible;', x='164', y='125', width='20.666666666666686', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 21px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') Jul
+                        foreignobject(style='overflow: visible;', x='184.66666666666669', y='125', width='20.666666666666657', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 21px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') Aug
+                        foreignobject(style='overflow: visible;', x='205.33333333333334', y='125', width='20.666666666666657', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 21px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') Sep
+                        foreignobject(style='overflow: visible;', x='226', y='125', width='20.666666666666686', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 21px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') Oct
+                        foreignobject(style='overflow: visible;', x='246.66666666666669', y='125', width='20.666666666666657', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 21px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') Nov
+                        foreignobject(style='overflow: visible;', x='267.33333333333337', y='125', width='30', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 30px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') Dec
+                        foreignobject(style='overflow: visible;', y='96', x='0', height='24', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 24px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 0
+                        foreignobject(style='overflow: visible;', y='72', x='0', height='24', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 24px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 200
+                        foreignobject(style='overflow: visible;', y='48', x='0', height='24', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 24px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 400
+                        foreignobject(style='overflow: visible;', y='24', x='0', height='24', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 24px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 600
+                        foreignobject(style='overflow: visible;', y='0', x='0', height='24', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 24px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 800
+                        foreignobject(style='overflow: visible;', y='-30', x='0', height='30', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 30px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 1000
+                .card-content
+                  h4.title Email Subscriptions
+                  p.category Last Campaign Performance
+                .card-footer
+                  .stats
+                    i.material-icons access_time
+                    |  campaign sent 2 days ago
+            .col-md-4
+              .card
+                .card-header.card-chart(data-background-color='red')
+                  #completedTasksChart.ct-chart
+                    svg.ct-chart-line(xmlns:ct='http://gionkunz.github.com/chartist-js/ct', width='100%', height='100%', style='width: 100%; height: 100%;')
+                      g.ct-grids
+                        line.ct-grid.ct-horizontal(x1='40', x2='40', y1='0', y2='120')
+                        line.ct-grid.ct-horizontal(x1='71.625', x2='71.625', y1='0', y2='120')
+                        line.ct-grid.ct-horizontal(x1='103.25', x2='103.25', y1='0', y2='120')
+                        line.ct-grid.ct-horizontal(x1='134.875', x2='134.875', y1='0', y2='120')
+                        line.ct-grid.ct-horizontal(x1='166.5', x2='166.5', y1='0', y2='120')
+                        line.ct-grid.ct-horizontal(x1='198.125', x2='198.125', y1='0', y2='120')
+                        line.ct-grid.ct-horizontal(x1='229.75', x2='229.75', y1='0', y2='120')
+                        line.ct-grid.ct-horizontal(x1='261.375', x2='261.375', y1='0', y2='120')
+                        line.ct-grid.ct-vertical(y1='120', y2='120', x1='40', x2='293')
+                        line.ct-grid.ct-vertical(y1='96', y2='96', x1='40', x2='293')
+                        line.ct-grid.ct-vertical(y1='72', y2='72', x1='40', x2='293')
+                        line.ct-grid.ct-vertical(y1='48', y2='48', x1='40', x2='293')
+                        line.ct-grid.ct-vertical(y1='24', y2='24', x1='40', x2='293')
+                        line.ct-grid.ct-vertical(y1='0', y2='0', x1='40', x2='293')
+                      g
+                        g.ct-series.ct-series-a
+                          path.ct-line(d='M 40 92.4 C 71.625 30 71.625 30 71.625 30 C 103.25 66 103.25 66 103.25 66 C 134.875 84 134.875 84 134.875 84 C 166.5 86.4 166.5 86.4 166.5 86.4 C 198.125 91.2 198.125 91.2 198.125 91.2 C 229.75 96 229.75 96 229.75 96 C 261.375 97.2 261.375 97.2 261.375 97.2')
+                          line.ct-point(x1='40', y1='92.4', x2='40.01', y2='92.4', value='230', opacity='1')
+                          line.ct-point(x1='71.625', y1='30', x2='71.635', y2='30', value='750', opacity='1')
+                          line.ct-point(x1='103.25', y1='66', x2='103.26', y2='66', value='450', opacity='1')
+                          line.ct-point(x1='134.875', y1='84', x2='134.885', y2='84', value='300', opacity='1')
+                          line.ct-point(x1='166.5', y1='86.4', x2='166.51', y2='86.4', value='280', opacity='1')
+                          line.ct-point(x1='198.125', y1='91.2', x2='198.135', y2='91.2', value='240', opacity='1')
+                          line.ct-point(x1='229.75', y1='96', x2='229.76', y2='96', value='200', opacity='1')
+                          line.ct-point(x1='261.375', y1='97.2', x2='261.385', y2='97.2', value='190', opacity='1')
+                      g.ct-labels
+                        foreignobject(style='overflow: visible;', x='40', y='125', width='31.625', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 32px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') 12am
+                        foreignobject(style='overflow: visible;', x='71.625', y='125', width='31.625', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 32px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') 3pm
+                        foreignobject(style='overflow: visible;', x='103.25', y='125', width='31.625', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 32px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') 6pm
+                        foreignobject(style='overflow: visible;', x='134.875', y='125', width='31.625', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 32px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') 9pm
+                        foreignobject(style='overflow: visible;', x='166.5', y='125', width='31.625', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 32px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') 12pm
+                        foreignobject(style='overflow: visible;', x='198.125', y='125', width='31.625', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 32px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') 3am
+                        foreignobject(style='overflow: visible;', x='229.75', y='125', width='31.625', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 32px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') 6am
+                        foreignobject(style='overflow: visible;', x='261.375', y='125', width='31.625', height='20')
+                          span.ct-label.ct-horizontal.ct-end(style='width: 32px; height: 20px', xmlns='http://www.w3.org/1999/xhtml') 9am
+                        foreignobject(style='overflow: visible;', y='96', x='0', height='24', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 24px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 0
+                        foreignobject(style='overflow: visible;', y='72', x='0', height='24', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 24px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 200
+                        foreignobject(style='overflow: visible;', y='48', x='0', height='24', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 24px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 400
+                        foreignobject(style='overflow: visible;', y='24', x='0', height='24', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 24px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 600
+                        foreignobject(style='overflow: visible;', y='0', x='0', height='24', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 24px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 800
+                        foreignobject(style='overflow: visible;', y='-30', x='0', height='30', width='30')
+                          span.ct-label.ct-vertical.ct-start(style='height: 30px; width: 30px', xmlns='http://www.w3.org/1999/xhtml') 1000
+                .card-content
+                  h4.title Completed Tasks
+                  p.category Last Campaign Performance
+                .card-footer
+                  .stats
+                    i.material-icons access_time
+                    |  campaign sent 2 days ago
+          .row
+            .col-lg-6.col-md-12
+              .card.card-nav-tabs
+                .card-header(data-background-color='purple')
+                  .nav-tabs-navigation
+                    .nav-tabs-wrapper
+                      span.nav-tabs-title Tasks:
+                      ul.nav.nav-tabs(data-tabs='tabs')
+                        li.active
+                          a(href='#profile', data-toggle='tab')
+                            i.material-icons bug_report
+                            |                             Bugs
+                            .ripple-container
+                        li
+                          a(href='#messages', data-toggle='tab')
+                            i.material-icons code
+                            |                             Website
+                            .ripple-container
+                        li
+                          a(href='#settings', data-toggle='tab')
+                            i.material-icons cloud
+                            |                             Server
+                            .ripple-container
+                .card-content
+                  .tab-content
+                    #profile.tab-pane.active
+                      table.table
+                        tbody
+                          tr
+                            td
+                              .checkbox
+                                label
+                                  input(type='checkbox', name='optionsCheckboxes', checked='')
+                                  span.checkbox-material
+                                    span.check
+                            td Sign contract for "What are conference organizers afraid of?"
+                            td.td-actions.text-right
+                              button.btn.btn-primary.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Edit Task')
+                                i.material-icons edit
+                              button.btn.btn-danger.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Remove')
+                                i.material-icons close
+                          tr
+                            td
+                              .checkbox
+                                label
+                                  input(type='checkbox', name='optionsCheckboxes')
+                                  span.checkbox-material
+                                    span.check
+                            td Lines From Great Russian Literature? Or E-mails From My Boss?
+                            td.td-actions.text-right
+                              button.btn.btn-primary.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Edit Task')
+                                i.material-icons edit
+                              button.btn.btn-danger.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Remove')
+                                i.material-icons close
+                          tr
+                            td
+                              .checkbox
+                                label
+                                  input(type='checkbox', name='optionsCheckboxes')
+                                  span.checkbox-material
+                                    span.check
+                            td
+                              | Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                            td.td-actions.text-right
+                              button.btn.btn-primary.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Edit Task')
+                                i.material-icons edit
+                              button.btn.btn-danger.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Remove')
+                                i.material-icons close
+                          tr
+                            td
+                              .checkbox
+                                label
+                                  input(type='checkbox', name='optionsCheckboxes', checked='')
+                                  span.checkbox-material
+                                    span.check
+                            td Create 4 Invisible User Experiences you Never Knew About
+                            td.td-actions.text-right
+                              button.btn.btn-primary.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Edit Task')
+                                i.material-icons edit
+                              button.btn.btn-danger.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Remove')
+                                i.material-icons close
+                    #messages.tab-pane
+                      table.table
+                        tbody
+                          tr
+                            td
+                              .checkbox
+                                label
+                                  input(type='checkbox', name='optionsCheckboxes', checked='')
+                                  span.checkbox-material
+                                    span.check
+                            td
+                              | Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                            td.td-actions.text-right
+                              button.btn.btn-primary.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Edit Task')
+                                i.material-icons edit
+                              button.btn.btn-danger.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Remove')
+                                i.material-icons close
+                          tr
+                            td
+                              .checkbox
+                                label
+                                  input(type='checkbox', name='optionsCheckboxes')
+                                  span.checkbox-material
+                                    span.check
+                            td Sign contract for "What are conference organizers afraid of?"
+                            td.td-actions.text-right
+                              button.btn.btn-primary.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Edit Task')
+                                i.material-icons edit
+                              button.btn.btn-danger.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Remove')
+                                i.material-icons close
+                    #settings.tab-pane
+                      table.table
+                        tbody
+                          tr
+                            td
+                              .checkbox
+                                label
+                                  input(type='checkbox', name='optionsCheckboxes')
+                                  span.checkbox-material
+                                    span.check
+                            td Lines From Great Russian Literature? Or E-mails From My Boss?
+                            td.td-actions.text-right
+                              button.btn.btn-primary.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Edit Task')
+                                i.material-icons edit
+                              button.btn.btn-danger.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Remove')
+                                i.material-icons close
+                          tr
+                            td
+                              .checkbox
+                                label
+                                  input(type='checkbox', name='optionsCheckboxes', checked='')
+                                  span.checkbox-material
+                                    span.check
+                            td
+                              | Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                            td.td-actions.text-right
+                              button.btn.btn-primary.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Edit Task')
+                                i.material-icons edit
+                              button.btn.btn-danger.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Remove')
+                                i.material-icons close
+                          tr
+                            td
+                              .checkbox
+                                label
+                                  input(type='checkbox', name='optionsCheckboxes')
+                                  span.checkbox-material
+                                    span.check
+                            td Sign contract for "What are conference organizers afraid of?"
+                            td.td-actions.text-right
+                              button.btn.btn-primary.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Edit Task')
+                                i.material-icons edit
+                              button.btn.btn-danger.btn-simple.btn-xs(type='button', rel='tooltip', title='', data-original-title='Remove')
+                                i.material-icons close
+            .col-lg-6.col-md-12
+              .card
+                .card-header(data-background-color='orange')
+                  h4.title Employees Stats
+                  p.category New employees on 15th September, 2016
+                .card-content.table-responsive
+                  table.table.table-hover
+                    thead.text-warning
+                      tr
+                        th ID
+                        th Name
+                        th Salary
+                        th Country
+                    tbody
+                      tr
+                        td 1
+                        td Dakota Rice
+                        td $36,738
+                        td Niger
+                      tr
+                        td 2
+                        td Minerva Hooper
+                        td $23,789
+                        td Curaçao
+                      tr
+                        td 3
+                        td Sage Rodriguez
+                        td $56,142
+                        td Netherlands
+                      tr
+                        td 4
+                        td Philip Chaney
+                        td $38,735
+                        td Korea, South

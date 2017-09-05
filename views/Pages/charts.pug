@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+	.row
+		.col-md-6
+			+chartDraw('green' , 'dailySalesChart', 'Daily Sales' , '50%' , ' increase in today sales.' , 'access_time' , 'updated 4 minutes ago')
+		.col-md-6
+			+chartDraw('orange' , 'emailsSubscriptionChart', 'Email Subscriptions' , '' , 'Last Campaign Performance' , 'access_time' , 'campaign sent 2 days ago')
+		.col-md-6
+			+chartDraw('red' , 'completedTasksChart', 'Completed Tasks' , '' , 'Last Campaign Performance' , 'access_time' , 'campaign sent 2 days ago')
+		.col-md-6
+			+chartDraw('blue' , 'runningTasksChart', 'Running Tasks' , '' , 'Last Campaign Performance' , 'access_time' , 'campaign sent 10 days ago')
