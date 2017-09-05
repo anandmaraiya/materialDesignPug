@@ -12,6 +12,5 @@ Prerequisites  -
   3. <a href="https://jquery.com/"> Jquery </a>
   4. <a href="https://material.io/"> Material Design </a>
 
-CDN :
 	
 
